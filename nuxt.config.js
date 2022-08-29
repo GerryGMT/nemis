@@ -52,17 +52,37 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+        // light: {
+        //   primary: "#003B95",
+        //   accent: "#ffffff",
+        //   secondary: "#ffffff",
+        //   info: colors.teal.lighten1,
+        //   warning: colors.amber.base,
+        //   error: colors.deepOrange.accent4,
+        //   success: colors.green.accent3,
+        // },
+        light: {
+          primary: '#14a1e1',
+          accent: '#c5f4ff',
+          secondary: '#e06e14',
+          palette: '#0e839d',
+          bg: '#003B95',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-        },
+          danger: '#FF0000',
+          outlineRed: '#FF0000',
+          principal: '#225a66',
+          schoolOwner: '#222d66',
+          scde: '#144e1a',
+          countyDirectorOfEducation: '#144c4e',
+          textColor: '#2B5B88',
+          blueButtonColor: '#3a649e',
+          background: '#f6fbff', // specific to the principal dashboard
+          titletext: '#3a649e' // specific to the principal dashboard
+        }
       },
     },
   },

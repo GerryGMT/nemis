@@ -4,6 +4,7 @@
 
   <div class="d-flex flex-column justify-space-between align-center">
     <v-slider
+      color="accent"
       v-model="width"
       class="align-self-stretch"
       min="50"

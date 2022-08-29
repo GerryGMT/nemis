@@ -4,7 +4,7 @@
 
   <v-carousel
     cycle
-    height="300"
+    height="310"
     hide-delimiter-background
     delimiter-icon="mdi-minus"
     show-arrows-on-hover
@@ -15,7 +15,7 @@
         <v-card>
           <div class="all">
           <div class="mmg">
-            <v-img src="/image 1.png"></v-img>
+            <v-img src="~assets/images/image.png"></v-img>
           </div>
           <div class="heading">
             <div class="welcome">
@@ -44,7 +44,7 @@
         <v-card>
           <div class="all">
           <div class="mmg">
-            <v-img src="/image 1.png"></v-img>
+            <v-img src="/image.png"></v-img>
           </div>
           <div class="heading">
             <div class="welcome">
@@ -73,7 +73,7 @@
         <v-card>
           <div class="all">
           <div class="mmg">
-            <v-img src="/image 1.png"></v-img>
+            <v-img src="/image.png"></v-img>
           </div>
           <div class="heading">
             <div class="welcome">
@@ -102,7 +102,7 @@
         <v-card>
           <div class="all">
           <div class="mmg">
-            <v-img src="/image 1.png"></v-img>
+            <v-img src="/image.png"></v-img>
           </div>
           <div class="heading">
             <div class="welcome">
@@ -147,7 +147,7 @@ export default {
   position: absolute;
   width: 323px;
   height: 126px;
-  left: 4rem;
+  left: 3.5rem;
   top: 52px;
 
   font-weight: 900;
@@ -162,7 +162,7 @@ export default {
   position: absolute;
   width: 386px;
   height: 68px;
-  left: 4rem;
+  left: 3.5rem;
   top: 181px;
   font-weight: 400;
   font-family: 'Nexa-Light', sans-serif;
@@ -181,11 +181,22 @@ export default {
   font-style: italic;
 }
 .mmg {
-  /* opacity: 0.4; */
   background-color: rgba(0, 59, 149, 0.4);
 ;
 }
 .all {
   position: relative;
+}
+
+@media only screen and (max-width: 321px) {
+  .welcome {
+    left: 1.5rem;
+  }
+  .my-paragraph {
+    left: 1.5rem;
+  }
+  .icons {
+    padding-left: 0;
+  }
 }
 </style>

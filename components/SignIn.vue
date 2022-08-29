@@ -8,20 +8,20 @@
           <v-autocomplete
             label="Please Select Identity"
             filled
-            solo-inverted
+            
           ></v-autocomplete>
           <v-text-field
             filled
-            solo-inverted
-           
-            label="Enter Number"
-            required
-            outlined
             
+            placeholder="254712345678"
+            outlined
+            label="Enter Number"
+            required            
           ></v-text-field>
           <v-text-field
             filled
-            solo-inverted
+            
+            placeholder="Password"
             v-model="password"
             label="Password"
             required
@@ -38,13 +38,12 @@
             Failed! Invalid number or password!
           </v-alert>
 
-          <v-btn class="mb-4" type="submit" color="#19A0FB" dark width="100%">
+          <v-btn class="mb-4" type="submit" color="primary" dark width="100%">
             {{ isLoading }}
           </v-btn>
 
           <v-checkbox
-            class="pb-10"
-            
+            class="pb-10"  
             label="Remember Me"
             color="primary"
             value="primary"
@@ -107,7 +106,6 @@ export default {
   height: auto;
   width: auto;
   background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   margin: 1rem;
   border-radius: 6px;
 }

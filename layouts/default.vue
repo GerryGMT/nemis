@@ -1,6 +1,5 @@
 <template>
-  <v-app>
-
+  <v-app id="app">
     <!-- Side Navigation -->
 
     <v-navigation-drawer v-model="drawer" app>
@@ -10,8 +9,7 @@
           <!-- Register -->
           <li class="nav-item">
             <NuxtLink class="nav-link text-white" to="/">
-              <v-list-item three-line
-                >
+              <v-list-item three-line>
                 <v-avatar size="80">
                   <img src="/register.png" />
                 </v-avatar>
@@ -23,8 +21,9 @@
                     >An Institution</v-list-item-title
                   >
                 </v-list-item-content>
-                <div class="triangle"></div
-              ></v-list-item>
+                <div class="triangle"></div>
+                <div class="bottom-line"></div>
+              </v-list-item>
             </NuxtLink>
           </li>
 
@@ -44,7 +43,7 @@
                   >
                 </v-list-item-content>
                 <div class="triangle"></div
-              ></v-list-item>
+              ><div class="bottom-line"></div></v-list-item>
             </NuxtLink>
           </li>
 
@@ -64,11 +63,11 @@
                   >
                 </v-list-item-content>
                 <div class="triangle"></div
-              ></v-list-item>
+              ><div class="bottom-line"></div></v-list-item>
             </NuxtLink>
           </li>
 
-         <!-- Engage -->
+          <!-- Engage -->
           <li class="nav-item">
             <NuxtLink class="nav-link text-white" to="/engage">
               <v-list-item three-line
@@ -80,24 +79,34 @@
                     Engage
                   </v-list-item-title>
                   <v-list-item-title class="itemsubtitle"
-                    >With School Managers<br/> and Teachers</v-list-item-title
+                    >With School Managers<br />
+                    and Teachers</v-list-item-title
                   >
                 </v-list-item-content>
                 <div class="triangle"></div
-              ></v-list-item>
+              ><div class="bottom-line"></div></v-list-item>
             </NuxtLink>
           </li>
-        </ul>    
+        </ul>
       </v-list>
+
+      <template>
+        <div class="nav-footer">
+          <div class="year">
+            ©{{ new Date().getFullYear() }} All Rights Reserved
+          <br />
+          <a href="">nemis@education.go.ke</a>          
+          </div>
+        </div>
+      </template>
     </v-navigation-drawer>
 
-<!-- Hambuger nav-bar-icon -->
+    <!-- Hambuger nav-bar-icon -->
     <v-fab-transition>
       <v-btn
         class="fabButton"
         color="#19A0FB"
         fab
-        dark
         small
         absolute
         fixed
@@ -135,8 +144,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-
-
 .container {
   height: 300px;
   background-color: #19a0fb;
@@ -162,59 +169,56 @@ export default {
 .v-list--nav {
   padding: 0px;
 }
-
-@media only screen and (min-width: 1025px) {
-  .fabButton {
-    display: none;
-  }
-}
-
 .triangle {
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-right: 30px solid #fff;
-  
 }
-
 .v-list--nav .v-list-item {
   padding: 0px;
 }
-
-.nav-item :hover {
-  background-color: #E4E4E4;
-  
-   .triangle{
-  border-right: 30px solid #023481;
-  }  
-}
-
-a {
-  position: relative;
-  text-decoration: none;
-  height: 3px;
-  background-color: red;
-  width: 100px;
-}
-a:after {
-  content: "";
-  position: absolute;
+.nuxt-link-exact-active {
+  .v-list-item {
+    background-color: #E4E4E4;
   }
+  .triangle {
+    border-right: 30px solid #023481;
+  }
+  .bottom-line {
+    border-bottom: 5px solid #003b95;
+  }
+}
+a.nuxt-link-active {
+  background-color: #000;
+}
+a {
+  text-decoration: none;
+}
 .navlist .nav::-webkit-scrollbar {
   display: none;
 }
 li {
   list-style: none;
 }
-
-// .arrow {
-//   width: 0;
-//   height: 0;
-//   border-top: 10px solid transparent;
-//   border-bottom: 10px solid transparent;
-//   border-right: 10px solid #c97932;
-//   margin: 25px auto;
-//   color: green;
-// }
-
+.bottom-line {
+  position: absolute;
+  width: 170px;
+  right: 50px;
+  border-bottom: 1px solid #003b95;
+  bottom: 0;
+}
+.nav-footer {
+  padding: 2.3rem;
+}
+.year {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: 'Nexa-Light', sans-serif;
+}
+@media only screen and (min-width: 1025px) {
+  .fabButton {
+    display: none;
+  }
+}
 </style>
 
