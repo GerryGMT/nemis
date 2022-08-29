@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Nexa-Bold';
+  src: local('Nexa-Bold'),
+    url('assets\Nexa-Font\Nexa Bold.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Nexa-Light';
+  src: local('Nexa-Light'),
+    url('assets\Nexa-Font\Nexa Light.otf') format('truetype');
+}
+@font-face {
+  font-family: 'Nexa-Regular';
+  src: local('Nexa-Regular'),
+    url('assets\Nexa-Font\Nexa Regular.otf') format('truetype');
+}

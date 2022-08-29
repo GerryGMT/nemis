@@ -1,4 +1,7 @@
 <template>
+
+<!-- Login Form -->
+
     <v-card class="form">
       <h3 class="ml-8 pt-5 mb-5">Login</h3>
         <form class="ml-8 mr-8" v-on:submit.prevent="submitForm">
@@ -10,11 +13,11 @@
           <v-text-field
             filled
             solo-inverted
-            v-model="number"
+           
             label="Enter Number"
             required
             outlined
-            :rules="[rules.required, rules.number]"
+            
           ></v-text-field>
           <v-text-field
             filled
@@ -41,7 +44,7 @@
 
           <v-checkbox
             class="pb-10"
-            v-model="ex4"
+            
             label="Remember Me"
             color="primary"
             value="primary"
@@ -99,7 +102,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .form {
   height: auto;
   width: auto;
@@ -117,5 +120,6 @@ export default {
 h3 {
   text-align: left;
   color: #00A44C;
+  font-family: 'Nexa-Regular', sans-serif;
 }
 </style>

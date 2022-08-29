@@ -1,77 +1,97 @@
 <template>
   <v-row>
     <v-col class="body text-center">
+      <!-- Import carousel -->
       <CarouselHeader />
 
       <v-footer padless>
         <v-card flat tile width="100%" class="white--text text-center">
           <v-row class="body" no-gutters>
             <v-col cols="12" sm="12" md="8">
-              <v-card-text>
-                <h1 class="pb-2 white--text">
+              <div>
+                <p class="heading ma-4 pa-2 white--text">
                   For School Managers or Head of Institutions, Register
                   Institution for credibility
-                </h1>
-              </v-card-text>
+                </p>
+              </div>
 
-              <v-card-text class="pt-0 text-left text-md-center">
-                <div
-                  v-for="(item, i) in items"
-                  :key="i"
-                  class="primary col-md-3 col-12 elevation-0"
-                >
-                  <h3 class="d-none d-md-block py-2">{{ item.name }}</h3>
-                  <div class="d-md-none">{{ item.name }}</div>
-                  <div>
-                    <li>
-                      <a
-                        v-for="tag in item.tags"
-                        target="_blank"
-                        v-bind:key="tag.url"
-                        class="white--text"
-                        >{{ tag.urlname }}
-                      </a>
-                    </li>
-                  </div>
+              <div class="contain">
+                <div class="first">
+                  <div class="line"></div>
+                  <ul>
+                    <li>Register an Institution</li>
+                    <li>What is NEMIS?</li>
+                    <li>Our Policies</li>
+                    <li>How to Apply</li>
+                  </ul>
                 </div>
-              </v-card-text>
+                <div class="second">
+                  <div class="line"></div>
+                  <ul>
+                    <li>FAQ’s</li>
+                    <li>Application Forms</li>
+                    <li>Schools/Institutions</li>
+                    <li>Information Centre</li>
+                  </ul>
+                </div>
+              </div>
+
+              <v-card class="card" height="60" width="260">
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="download-text mb-3">
+                      Download School Guide
+                    </v-list-item-title>
+                  </v-list-item-content>
+                  <v-btn
+                    class="Button"
+                    color="pink"
+                    dark
+                    small
+                    @click="drawer = !drawer"
+                  >
+                    <v-icon>mdi-download</v-icon>
+                  </v-btn>
+                </v-list-item>
+              </v-card>
             </v-col>
 
-            <v-divider vertical></v-divider>
+            <v-divider vertical dark></v-divider>
 
             <v-col cols="12" md="4">
               <SignIn />
             </v-col>
+          </v-row>
+
+          <v-divider dark></v-divider>
+
+          <!-- Footer Links -->
+
+          <v-card-text class="body white--text">
+            <v-row class="footer" justify="center" no-gutters>
+              <div class="links">
+                <div
+                  v-for="link in links"
+                  :key="link"
+                  color="white"
+                  text
+                  class="my-2"
+                >
+                  {{ link }} <span class="pa-5">/</span>
+                </div>
+              </div>
+
+              <div class="icons">
+                <a target="_blank" :key="icon.url" v-for="icon in icons">
+                  <v-btn class="mx-4" dark icon>
+                    <v-icon size="24px">
+                      {{ icon.icon }}
+                    </v-icon>
+                  </v-btn>
+                </a>
+              </div>
             </v-row>
-
-            <v-divider></v-divider>
-
-            <v-card-text class="body white--text">
-              <v-row class="footer" justify="center" no-gutters>
-                <div class="links">
-                  <v-text
-                    v-for="link in links"
-                    :key="link"
-                    color="white"
-                    text
-                    class="my-2"
-                  >
-                    {{ link }} <span class="pa-5">/</span>
-                  </v-text>
-                </div>
-
-                <div class="icons">
-                  <a target="_blank" :key="icon.url" v-for="icon in icons">
-                    <v-btn class="mx-4" dark icon>
-                      <v-icon size="24px">
-                        {{ icon.icon }}
-                      </v-icon>
-                    </v-btn>
-                  </a>
-                </div>
-              </v-row>
-            </v-card-text>
-          
+          </v-card-text>
         </v-card>
       </v-footer>
     </v-col>
@@ -98,52 +118,20 @@ export default {
         {
           name: 'facebook',
           icon: 'mdi-facebook',
-          url: 'https://codepen.io/jettaz',
+          url: 'https://facebook.com',
         },
         {
           name: 'twitter',
           icon: 'mdi-twitter',
-          url: 'https://codepen.io/jettaz',
+          url: 'https://twitter.com',
         },
         {
           name: 'youtube',
           icon: 'mdi-youtube',
-          url: 'https://codepen.io/jettaz',
+          url: 'https://youtube.com',
         },
       ],
-      items: [
-        {
-          name: 'Product',
-          tags: [
-            {
-              urlname: 'Create Websites',
-              url: 'https://codepen.io/jettaz',
-            },
-            {
-              urlname: 'Secure Cloud Hosting',
-              url: 'https://codepen.io/jettaz',
-            },
-            {
-              urlname: 'Engage Your Audience',
-              url: 'https://codepen.io/jettaz',
-            },
-            {
-              urlname: 'Website Support',
-              url: 'https://codepen.io/jettaz',
-            },
-          ],
-        },
-        {
-          name: 'Company',
-          tags: [
-            { urlname: 'About', url: 'https://codepen.io/jettaz' },
-            { urlname: 'Careers', url: 'https://codepen.io/jettaz' },
-            { urlname: 'Support', url: 'https://codepen.io/jettaz' },
-            { urlname: 'Pricing', url: 'https://codepen.io/jettaz' },
-            { urlname: 'FAQ', url: 'https://codepen.io/jettaz' },
-          ],
-        },
-      ],
+      
     }
   },
 }
@@ -152,5 +140,74 @@ export default {
 <style>
 .body {
   background-color: #003b95;
+}
+.heading {
+  font-size: 14px;
+  font-family: 'Nexa-Light', sans-serif;
+  font-weight: 400;
+}
+.contain {
+  width: 100%;
+  /* position: relative; */
+  height: auto;
+  display: flex;
+  padding-left: 3rem;
+}
+.first  {
+  width: 50%;
+  height: auto;
+  text-align: center;
+}
+.second {
+  width: 50%;
+  height: auto;
+  text-align: center;
+}
+
+.contain .first ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+.contain .second ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+.contain .first ul li {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Nexa-Light', sans-serif;
+  font-weight: 700;
+  /* padding: 5px 0px 5px 100px; */
+  text-align: left;
+  cursor: pointer;
+}
+.contain .second ul li {
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Nexa-Light', sans-serif;
+  font-weight: 700;
+  /* padding: 5px 0px 5px 100px; */
+  text-align: left;
+  cursor: pointer;
+}
+.line {
+  border-bottom: 5px solid #ebf3ff1a;
+  width: 196px;
+  /* padding: 25px 100px; */
+}
+.download-text
+{
+  font-size: 13px;
+  font-family: 'Nexa-Light', sans-serif;
+  font-weight: 700;
+}
+.card {
+  bottom: -100px;
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+<!-- Footer links -->
   <v-footer  color="#003b95" padless fixed>
     <v-row class="footer" justify="center" no-gutters>
       <div class="links">
@@ -45,6 +46,8 @@ export default {
 <style>
 .links {
   font-size: 12px;
+  font-family: 'Nexa-Light';
+  font-weight: 700;
 }
 .icons {
   padding-left: 4rem;

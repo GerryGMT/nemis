@@ -1,81 +1,101 @@
 <template>
   <v-app>
+
+    <!-- Side Navigation -->
+
     <v-navigation-drawer v-model="drawer" app>
       <div class="container"><MinistryLogo /></div>
-      <v-list nav>
-        <!-- <div class="callout top-left">Your Favourite HTML,CSS,JS Playground!</div> -->
-        <v-card class="mx-auto" max-width="344" outlined>
-          
-            <v-list-item three-line>
-              <v-avatar size="80">
-                <img src="/register.png" />
-              </v-avatar>
-              <v-list-item-content class="p-0">
-                <v-list-item-title class="title mb-0 pb-0">
-                  Register
-                </v-list-item-title>
-                <v-list-item-subtitle class="subtitle"
-                  >An Institution</v-list-item-subtitle
+      <v-list class="navlist" nav>
+        <ul class="navbar-nav">
+          <!-- Register -->
+          <li class="nav-item">
+            <NuxtLink class="nav-link text-white" to="/">
+              <v-list-item three-line
                 >
-              </v-list-item-content>
-            </v-list-item>
-          
-        </v-card>
+                <v-avatar size="80">
+                  <img src="/register.png" />
+                </v-avatar>
+                <v-list-item-content class="p-0">
+                  <v-list-item-title class="title mb-0 pb-0">
+                    Register
+                  </v-list-item-title>
+                  <v-list-item-title class="itemsubtitle"
+                    >An Institution</v-list-item-title
+                  >
+                </v-list-item-content>
+                <div class="triangle"></div
+              ></v-list-item>
+            </NuxtLink>
+          </li>
 
-        <v-card class="mx-auto" max-width="344" outlined>
-          <v-list-item three-line>
-            <v-avatar size="80">
-              <img src="/learn.png" />
-            </v-avatar>
-            <v-list-item-content class="p-0">
-              <v-list-item-title class="title mb-0 pb-0">
-                Learn
-              </v-list-item-title>
-              <v-list-item-subtitle class="subtitle"
-                >More About Us</v-list-item-subtitle
-              >
-            </v-list-item-content>
-          </v-list-item>
-        </v-card>
+          <!-- Learn -->
+          <li class="nav-item">
+            <NuxtLink class="nav-link text-white" to="/inspire">
+              <v-list-item three-line
+                ><v-avatar size="80">
+                  <img src="/learn.png" />
+                </v-avatar>
+                <v-list-item-content class="p-0">
+                  <v-list-item-title class="title mb-0 pb-0">
+                    Learn
+                  </v-list-item-title>
+                  <v-list-item-title class="itemsubtitle"
+                    >More About Us</v-list-item-title
+                  >
+                </v-list-item-content>
+                <div class="triangle"></div
+              ></v-list-item>
+            </NuxtLink>
+          </li>
 
-        <v-card class="mx-auto" max-width="344" outlined>
-          <v-list-item three-line>
-            <v-avatar size="80">
-              <img src="/discover.png" />
-            </v-avatar>
-            <v-list-item-content class="p-0">
-              <v-list-item-title class="title mb-0 pb-0">
-                Discover
-              </v-list-item-title>
-              <v-list-item-subtitle class="subtitle"
-                >Our Curriculum</v-list-item-subtitle
-              >
-            </v-list-item-content>
-          </v-list-item>
-        </v-card>
+          <!-- Discover -->
+          <li class="nav-item">
+            <NuxtLink class="nav-link text-white" to="/discover">
+              <v-list-item three-line
+                ><v-avatar size="80">
+                  <img src="/discover.png" />
+                </v-avatar>
+                <v-list-item-content class="p-0">
+                  <v-list-item-title class="title mb-0 pb-0">
+                    Discover
+                  </v-list-item-title>
+                  <v-list-item-title class="itemsubtitle"
+                    >Our Curriculum</v-list-item-title
+                  >
+                </v-list-item-content>
+                <div class="triangle"></div
+              ></v-list-item>
+            </NuxtLink>
+          </li>
 
-        <v-card class="mx-auto" max-width="344" outlined>
-          <v-list-item three-line>
-            <v-avatar size="80">
-              <img src="/engage.png" />
-            </v-avatar>
-            <v-list-item-content class="p-0">
-              <v-list-item-title class="title mb-0 pb-0">
-                Engage
-              </v-list-item-title>
-              <v-list-item-subtitle class="subtitle"
-                >With School Managers and Teachers</v-list-item-subtitle
-              >
-            </v-list-item-content>
-          </v-list-item>
-        </v-card>
+         <!-- Engage -->
+          <li class="nav-item">
+            <NuxtLink class="nav-link text-white" to="/engage">
+              <v-list-item three-line
+                ><v-avatar size="80">
+                  <img src="/engage.png" />
+                </v-avatar>
+                <v-list-item-content class="p-0">
+                  <v-list-item-title class="title mb-0 pb-0">
+                    Engage
+                  </v-list-item-title>
+                  <v-list-item-title class="itemsubtitle"
+                    >With School Managers<br/> and Teachers</v-list-item-title
+                  >
+                </v-list-item-content>
+                <div class="triangle"></div
+              ></v-list-item>
+            </NuxtLink>
+          </li>
+        </ul>    
       </v-list>
     </v-navigation-drawer>
 
+<!-- Hambuger nav-bar-icon -->
     <v-fab-transition>
       <v-btn
         class="fabButton"
-        color="pink"
+        color="#19A0FB"
         fab
         dark
         small
@@ -85,7 +105,7 @@
         left
         @click="drawer = !drawer"
       >
-        <v-icon>mdi-plus</v-icon>
+        <v-icon>mdi-home</v-icon>
       </v-btn>
     </v-fab-transition>
 
@@ -95,7 +115,7 @@
   </v-app>
 </template>
 
-<script>
+<script >
 import MinistryLogo from '~/components/MinistryLogo.vue'
 export default {
   components: { MinistryLogo },
@@ -114,7 +134,9 @@ export default {
   },
 }
 </script>
-<style>
+<style lang="scss" scoped>
+
+
 .container {
   height: 300px;
   background-color: #19a0fb;
@@ -124,47 +146,75 @@ export default {
 }
 .title {
   font-size: 18px;
+  font-family: 'Nexa-Light', sans-serif;
+  font-weight: 700;
+  color: #003b95;
 }
-.subtitle {
+.itemsubtitle {
   font-size: 12px;
+  font-family: 'Nexa-Light', sans-serif;
+  font-weight: 700;
+  color: #003b95;
 }
+.v-application ul {
+  padding: 0px;
+}
+.v-list--nav {
+  padding: 0px;
+}
+
 @media only screen and (min-width: 1025px) {
   .fabButton {
     display: none;
   }
 }
 
-/* div.callout {
-	height: 60px;
-	width: 100%;
-	float: left;
+.triangle {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 30px solid #fff;
+  
 }
-div.callout {
-	background-color: #444;
-	background-image: -moz-linear-gradient(top, #444, #444);
-	position: relative;
-	color: #ccc;
-	padding: 10px;
-	border-radius: 3px;
-	box-shadow: 0px 0px 20px #999;
-	
-	min-height: 50px;
-	border: 1px solid #333;
-	text-shadow: 0 0 1px #000;
-	
+
+.v-list--nav .v-list-item {
+  padding: 0px;
 }
-.callout.left::before {
-	right: 0px;
-	top: 40%;
-	border-left: 10px solid red;
-  transform: rotate(180deg);
+
+.nav-item :hover {
+  background-color: #E4E4E4;
+  
+   .triangle{
+  border-right: 30px solid #023481;
+  }  
 }
-.callout::before {
-	content: "";
-	width: 0px;
-	height: 0px;
-	border: 0.8em solid transparent;
-	position: absolute;
-} */
+
+a {
+  position: relative;
+  text-decoration: none;
+  height: 3px;
+  background-color: red;
+  width: 100px;
+}
+a:after {
+  content: "";
+  position: absolute;
+  }
+.navlist .nav::-webkit-scrollbar {
+  display: none;
+}
+li {
+  list-style: none;
+}
+
+// .arrow {
+//   width: 0;
+//   height: 0;
+//   border-top: 10px solid transparent;
+//   border-bottom: 10px solid transparent;
+//   border-right: 10px solid #c97932;
+//   margin: 25px auto;
+//   color: green;
+// }
+
 </style>
 

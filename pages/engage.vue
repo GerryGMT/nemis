@@ -1,5 +1,5 @@
 <template>
-  <h1>Inspire Page</h1>
+  <h1>Engage Page</h1>
 </template>
 
 <script>
