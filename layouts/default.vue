@@ -119,6 +119,7 @@
     </v-fab-transition>
 
     <v-main>
+      <CarouselHeader />
       <Nuxt />
     </v-main>
   </v-app>
@@ -126,8 +127,9 @@
 
 <script >
 import MinistryLogo from '~/components/MinistryLogo.vue'
+import CarouselHeader from '~/components/carouselHeader.vue';
 export default {
-  components: { MinistryLogo },
+  components: { MinistryLogo, CarouselHeader },
   data() {
     return {
       drawer: null,

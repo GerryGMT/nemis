@@ -1,8 +1,6 @@
 <template>
   <v-row>
     <v-col class="body text-center">
-      <!-- Import carousel -->
-      <CarouselHeader />
 
       <v-footer padless>
         <v-card flat tile width="100%" class="white--text text-center">
@@ -101,12 +99,11 @@
 </template>
 
 <script>
-import CarouselHeader from '~/components/carouselHeader.vue'
 import SignIn from '../components/SignIn.vue'
 import Footer from '~/components/Footer.vue'
 export default {
   name: 'Index',
-  components: { CarouselHeader, SignIn, Footer },
+  components: { SignIn, Footer },
   data() {
     return {
       links: [
